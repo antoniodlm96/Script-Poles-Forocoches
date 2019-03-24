@@ -27,12 +27,15 @@ while True:
         driver.get(link_hilo)
         print(link_hilo)
 
-        area_escribir = driver.find_element_by_name("message")
-        area_escribir.send_keys("Pole automatica hecha con poles.py @LemonCat_")
+        titulo =  driver.find_element_by_xpath("//span[@class = 'cmega']")
+        if "serio" not in titulo.text and "Serio" not in titulo.text:
 
-        boton_enviar = driver.find_element_by_xpath("//input[@value = 'Enviar Respuesta']")
-        boton_enviar.click()
-        print("Pole exitosa!!1")
+            area_escribir = driver.find_element_by_name("message")
+            area_escribir.send_keys("Pole automatica hecha con poles.py @LemonCat_")
+
+            boton_enviar = driver.find_element_by_xpath("//input[@value = 'Enviar Respuesta']")
+            boton_enviar.click()
+            print("Pole exitosa!!1")
 
     except:
         print("No hay hilos donde hacer poles :(")
